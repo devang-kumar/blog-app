@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title><%= typeof title !== 'undefined' ? title : 'Blog App' %></title>
+  <link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+  <header class="container">
+    <a href="/" class="brand">FileBlog</a>
+    <nav>
+      <% if (user) { %>
+        <span>Hi, <%= user.name || user.email %> (<%= user.role %>)</span>
+        <form action="/logout" method="post" style="display:inline;">
+          <button>Logout</button>
+        </form>
+        <a href="/posts/new" class="btn">New Post</a>
+      <% } else { %>
+        <a href="/login" class="btn">Login</a>
+        <a href="/signup" class="btn secondary">Sign up</a>
+      <% } %>
+    </nav>
+  </header>
+  <main class="container">

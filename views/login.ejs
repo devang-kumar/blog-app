@@ -1,0 +1,12 @@
+<%- include('_header', { title: 'Login', user: user }) %>
+<h1>Login</h1>
+<% if (typeof error !== 'undefined') { %>
+  <p class="error"><%= error %></p>
+<% } %>
+<form method="post" class="card">
+  <label>Email <input type="email" name="email" required/></label>
+  <label>Password <input type="password" name="password" required/></label>
+  <button>Login</button>
+</form>
+<p class="muted">No account? <a href="/signup">Sign up</a></p>
+<%- include('_footer') %>

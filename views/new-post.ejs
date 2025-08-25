@@ -1,0 +1,8 @@
+<%- include('_header', { title: 'New Post', user: user }) %>
+<h1>New Post</h1>
+<form action="/posts" method="post" class="card">
+  <label>Title <input type="text" name="title" required /></label>
+  <label>Content <textarea name="content" rows="8" required></textarea></label>
+  <button>Create</button>
+</form>
+<%- include('_footer') %>

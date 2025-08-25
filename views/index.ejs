@@ -1,0 +1,30 @@
+<%- include('_header', { title: 'All Posts', user: user }) %>
+<h1>All Posts</h1>
+<% if (posts.length === 0) { %>
+  <p class="muted">No posts yet. Be the first to create one!</p>
+<% } %>
+<ul class="post-list">
+  <% posts.forEach(p => { %>
+    <li class="post-card">
+      <div class="post-head">
+        <h2><%= p.title %></h2>
+        <span class="muted">by <%= p.authorName || p.authorEmail %> • <%= new Date(p.createdAt).toLocaleString() %></span>
+      </div>
+      <p><%= p.content %></p>
+      <div class="row actions">
+        <form action="/posts/<%= p.id %>/like" method="post">
+          <button type="submit">👍 Like (<%= p.likes.length %>)</button>
+        </form>
+        <form action="/posts/<%= p.id %>/dislike" method="post">
+          <button type="submit">👎 Dislike (<%= p.dislikes.length %>)</button>
+        </form>
+        <% if (user && (user.role === 'admin' || user.email === p.authorEmail)) { %>
+          <form action="/posts/<%= p.id %>?_method=DELETE" method="post" onsubmit="return confirm('Delete this post?');">
+            <button type="submit" class="danger">Delete</button>
+          </form>
+        <% } %>
+      </div>
+    </li>
+  <% }) %>
+</ul>
+<%- include('_footer') %>
