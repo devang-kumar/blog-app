@@ -1,0 +1,150 @@
+/* Reset & Base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Helvetica, Arial, sans-serif;
+  margin: 0;
+  background: #0b0d10; /* main background */
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+/* Links */
+a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Layout */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+.brand {
+  font-weight: 700;
+  font-size: 20px;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #1f2937;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+nav .btn,
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+nav .btn.secondary {
+  background: #374151;
+}
+button:hover {
+  opacity: 0.9;
+}
+.danger {
+  background: #dc2626;
+}
+
+/* Text colors */
+.muted {
+  color: #9ca3af;
+}
+
+/* Card (for forms, generic blocks) */
+.card {
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 16px;
+  padding: 20px;
+  display: grid;
+  gap: 12px;
+  max-width: 480px;
+}
+
+/* Forms */
+label {
+  display: grid;
+  gap: 6px;
+  font-size: 14px;
+}
+input,
+textarea {
+  background: #0f172a;
+  color: #e5e7eb;
+  border: 1px solid #374151;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 14px;
+}
+input:focus,
+textarea:focus {
+  border-color: #2563eb;
+  outline: none;
+}
+
+/* Error box */
+.error {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+  padding: 10px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+/* Post List */
+.post-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+.post-card {
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 16px;
+  padding: 20px;
+}
+.post-head {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+/* Post actions (like/dislike/delete row) */
+.row.actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid #1f2937;
+  margin-top: 30px;
+  padding-top: 16px;
+  text-align: center;
+  font-size: 14px;
+  color: #9ca3af;
+}
