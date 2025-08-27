@@ -1,7 +1,7 @@
 [
   {
     "email": "admin@example.com",
-    "password_hash": "",
+    "password_hash": "$2a$10$2GgaZFfIqhrncK9o98tD5e9qIuvm4qSEW6QG1R1MyVdcw8ZfnDQmy",
     "name": "Admin"
   }
 ]
